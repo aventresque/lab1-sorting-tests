@@ -1,9 +1,12 @@
+package ie.tcd.scss.csl.csu22012;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
 public class InsertionSort {
-    void InsertionSort(List<Integer> nums){
+
+    List<Integer> sort(List<Integer> nums) {
         for(int i = 1; i < nums.size(); i++){
             int value = nums.get(i);
             int j = i - 1;
@@ -13,6 +16,7 @@ public class InsertionSort {
             }
             nums.set(j+1, value);
         }
+        return nums;
     }
     
     static List<Integer> generateRandomArray(int n){
@@ -29,11 +33,11 @@ public class InsertionSort {
     public static void main(String args[])
     {
         InsertionSort ob = new InsertionSort();
-        List<Integer> nums = generateRandomArray(10);
+        List<Integer> nums = generateRandomArray(20);
         System.out.println("Original Array:");
         System.out.println(nums.toString());
-        ob.InsertionSort(nums);
+        List<Integer> out = ob.sort(nums);
         System.out.println("Sorted Array");
-        System.out.println(nums.toString());
+        System.out.println(out.toString());
     }
 }
